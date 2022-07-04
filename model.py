@@ -7,7 +7,7 @@ import shutil
 import glob
 from realesrgan import RealESRGAN
 import numpy as np
-#print(torch.cuda.is_available())
+from io import BytesIO
 
 
 def run_model(image):
@@ -35,4 +35,13 @@ if uploaded_file:
     st.write("Enhancing the image")
     result = run_model(uploaded_file)
     st.image(result)
-    st.download_button('Download file', result)
+
+    buf = BytesIO()
+    result.save(buf, format="jpeg")
+    byte_im = buf.getvalue()
+    st.download_button(
+        label="Download Image",
+        data=byte_im,
+        file_name="imagename.png",
+        mime="image/jpeg",
+    )
