@@ -34,9 +34,9 @@ if uploaded_file:
     right.write("Upscaled image")
 
     result_file = run_model(uploaded_file)
-    right.image(result_file, width=300)
     buf = BytesIO()
     result_file.save(buf, format="png")
+    right.image(result_file, width=300)
     byte_im = buf.getvalue()
     st.download_button(
         label="Download Image",
