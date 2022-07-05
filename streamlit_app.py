@@ -18,9 +18,9 @@ def run_model(image):
 
 
 st.set_page_config(layout='centered', page_icon='🔎', page_title='Image upscaler')
-st.title('🔎 Image upscaler 2x')
+st.title('🔎 Image upscaler x2')
 st.write('Get higher resolution using this app.')
-st.write('It uses RealESRGAN to upscale the image resolution 2x. Give it a try!')
+st.write('It uses RealESRGAN to upscale the image resolution x2. Give it a try!')
 
 uploaded_file = st.file_uploader("Upload your image")
 
