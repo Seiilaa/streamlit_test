@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader("Upload your image")
 
 if uploaded_file:
     st.write('Upscaling the image 🏃‍♀')
-    st.write('This might take up to 15 minutes depending on the image size.')
+    st.write('This will take a couple of minutes depending on the size of the image.')
 
     left, right = st.columns(2)
     left.write("Input image")
